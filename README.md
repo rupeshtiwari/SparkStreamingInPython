@@ -103,7 +103,9 @@ http://localhost:4040/jobs/job/?id=1
 
 ## Setup single node Kafka Cluster on your local MACOS laptop
 
-### Task 1: Download instal kafka
+Apache Kafka is used as a data-source for Spark Streaming application for low-latency real time micro batch processing.
+
+### Task 1: Download install kafka
 
 1. download the kafka https://kafka.apache.org/downloads. I downloaded `kafka_2.12-3.1.0`. `server.properties` is used
    by kafka broker.
