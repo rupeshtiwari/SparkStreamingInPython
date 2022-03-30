@@ -26,12 +26,14 @@ if __name__ == '__main__':
         .config("spark.sql.shuffle.partitions", 3) \
         .getOrCreate()
 
+    # Read
     lines_df = spark.readStream \
         .format("socket") \
         .option("host", "localhost") \
         .option("port", "9999") \
         .load()
 
+    # Transform
     # checkpointLocation is mandatory dataframe writer will use to store the progress information
     words_df = lines_df.select(expr("explode(split(value,' ')) as word"))
     counts_df = words_df.groupby("word").count()
@@ -41,5 +43,6 @@ if __name__ == '__main__':
         .outputMode("complete") \
         .start()
 
+    # Sink
     # Stream Processing application will only terminate when you Manual Stop or Kill or Exception & shut down gracefully
     word_count_query.awaitTermination()
