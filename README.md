@@ -65,3 +65,15 @@ if __name__ == '__main__':
 ```
 ## Task 3: Now type something on terminal and hit enter
 ![](https://i.imgur.com/wSAWPo2.png)
+
+## Spark Background Thread
+![](https://i.imgur.com/2Fp4REK.png)
+
+![](https://i.imgur.com/sBs6gYd.png)
+
+Background thread will keep triggering the micro-batch job to read, transform and sink the stream data. 
+
+![](https://i.imgur.com/9XZ8DV1.png)
+
+You will see the micro batch job on Spark Context UI 
+http://localhost:4040/jobs/job/?id=1 
