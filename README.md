@@ -1,5 +1,14 @@
 # Spark Streaming Example
 > Write spark streaming application to listen to port 9999 and read the sentence and print the word count. 
+> Read socket data source and process in real-time. It is not design for production usage this is good for testing & learning. 
+
+**Spark Streaming Sources**
+1. Socket source (non-production)
+2. Rate source (benchmarking & testing spark cluster)
+3. File source (most commonly used in production)
+4. Kafka source (most commonly used in production)
+
+**What are we doing in this example?**
 1. Create Spark streaming project using your IDE
 2. Typical structure of spark streaming application
     1. Read Streaming Source - Input Dataframe
@@ -83,3 +92,8 @@ http://localhost:4040/jobs/job/?id=1
 1. Unspecified, 2. Time Interval, 3. One time, 4. Continuous ( millisecond latency )
 ![](https://i.imgur.com/oowkElh.png)
 
+
+
+
+## References
+- https://learning.oreilly.com/videos/real-time-stream-processing 
