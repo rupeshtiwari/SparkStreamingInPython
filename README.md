@@ -66,7 +66,8 @@ if __name__ == '__main__':
 ## Task 3: Now type something on terminal and hit enter
 ![](https://i.imgur.com/wSAWPo2.png)
 
-## Spark Background Thread
+## Spark Micro Batch 
+
 ![](https://i.imgur.com/2Fp4REK.png)
 
 ![](https://i.imgur.com/sBs6gYd.png)
@@ -77,3 +78,8 @@ Background thread will keep triggering the micro-batch job to read, transform an
 
 You will see the micro batch job on Spark Context UI 
 http://localhost:4040/jobs/job/?id=1 
+
+**There are 4 triggers for micro-batch:** 
+1. Unspecified, 2. Time Interval, 3. One time, 4. Continuous ( millisecond latency )
+![](https://i.imgur.com/oowkElh.png)
+
