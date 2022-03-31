@@ -10,6 +10,12 @@ if __name__ == "__main__":
         .getOrCreate()
 
     # Read
-    spark.readStream \
+    kafka_df = spark.readStream \
         .format("kafka") \
-        .option("kafka.bootstrap.servers", "localhost:9092")
+        .option("kafka.bootstrap.servers", "localhost:9092") \
+        .option("startingOffsets", "earliest") \
+        .load()
+
+    kafka_df.printSchema()
+
+    # Transform
