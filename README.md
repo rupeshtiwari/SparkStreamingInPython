@@ -170,7 +170,7 @@ Add below on `spark-defaults.cof` file. When you start your pyspark application 
 download the package.
 
 ```
-spark.jars.packages  org.apache.spark:spark-sql-kafka-0-10_2.13:3.2.1
+spark.jars.packages  org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0
 ``` 
 
 You can also add this on your application code however, it is not good practice. So keep it on spark default file.

@@ -1,8 +1,4 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
+# Before Running Note: Before running this file open a new terminal and run script `nc -lk 9999` then enter some text
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import expr
