@@ -13,8 +13,9 @@ if __name__ == "__main__":
     kafka_df = spark.readStream \
         .format("kafka") \
         .option("kafka.bootstrap.servers", "localhost:9092") \
-        .option("subscribe", "simple") \
+        .option("subscribe", "test-topic") \
         .option("startingOffsets", "earliest") \
+        .option("failOnDataLoss", "false") \
         .load()
 
     value_df = kafka_df.select((col("value").cast("string")).alias("value"))
