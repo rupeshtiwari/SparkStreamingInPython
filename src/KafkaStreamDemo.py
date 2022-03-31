@@ -1,4 +1,12 @@
 """
+What this file does
+--------------------
+1. Read the JSON stream from kafka
+2. Flatten the invoice line items data frame
+3. Write in to the local hard-disk folder each json file
+
+Steps to run this file
+----------------------
 Delete `chk-point-dir, kafka-logs, output` folders to start from scratch
 1. Run the Kafka-scripts step by step in sequence
 2. Next run this file
