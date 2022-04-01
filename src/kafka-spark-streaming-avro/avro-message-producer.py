@@ -3,7 +3,6 @@
 10 instance
 
 
-python3 avro-message-producer.py --topic-name netflow --client-id netflow --count 10
 
 """
 import argparse

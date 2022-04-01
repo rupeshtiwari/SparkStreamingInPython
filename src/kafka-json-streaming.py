@@ -23,7 +23,7 @@ if __name__ == "__main__":
         .builder \
         .appName("Kafka Streaming Demo") \
         .master("local[3]") \
-        .config("spark.streaming.stopGracefullyOnShutdown", "true") \
+        .config("spark.spark-streaming.stopGracefullyOnShutdown", "true") \
         .getOrCreate()
     schema = StructType([
         StructField("InvoiceNumber", StringType()),

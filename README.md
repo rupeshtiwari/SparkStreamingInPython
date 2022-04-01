@@ -49,13 +49,13 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # we want to stop application gracefully while we quit or kill or on exception so add
-    # 'spark.streaming.stopGracefullyOnShutdown' to true
+    # 'spark.spark-streaming.stopGracefullyOnShutdown' to true
     # We are using groupBy transformation that will internally cause a shuffle operation.
     # That default shuffle partition configuration is 200 so our app will run slow
     # So you should set the spark shuffle partition value to 3
     spark = SparkSession.builder.appName("Streaming word count")
     .master("local[3]")
-    .config("spark.streaming.stopGracefullyOnShutdown", "true")
+    .config("spark.spark-streaming.stopGracefullyOnShutdown", "true")
     .config("spark.sql.shuffle.partitions", 3)
     .getOrCreate()
 
@@ -174,6 +174,26 @@ spark.jars.packages  org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0
 ``` 
 
 You can also add this on your application code however, it is not good practice. So keep it on spark default file.
+
+## scripts
+
+```commandline
+# check process in use
+lsof -n -i :9092 | grep LISTEN
+
+# kill process
+kill -9 9572
+```
+
+Read pending messages
+
+```commandline
+bin/kafka-run-class.sh kafka.admin.ConsumerGroupCommand --group my-group --bootstrap-server localhost:9092 --describe
+
+OR
+
+bin/kafka-run-class.sh kafka.admin.ConsumerGroupCommand --bootstrap-server localhost:9092 --describe --all-groups
+```
 
 ## References
 

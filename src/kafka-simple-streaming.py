@@ -6,14 +6,14 @@ if __name__ == "__main__":
         .builder \
         .appName("Kafka Streaming Demo") \
         .master("local[3]") \
-        .config("spark.streaming.stopGracefullyOnShutdown", "true") \
+        .config("spark.spark-streaming.stopGracefullyOnShutdown", "true") \
         .getOrCreate()
 
     # Read
     kafka_df = spark.readStream \
         .format("kafka") \
         .option("kafka.bootstrap.servers", "localhost:9092") \
-        .option("subscribe", "test-topic") \
+        .option("subscribe", "order") \
         .option("startingOffsets", "earliest") \
         .option("failOnDataLoss", "false") \
         .load()

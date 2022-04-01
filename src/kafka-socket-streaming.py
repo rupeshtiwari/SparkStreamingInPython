@@ -12,13 +12,13 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # we want to stop application gracefully while we quit or kill or on exception so add
-    # 'spark.streaming.stopGracefullyOnShutdown' to true
+    # 'spark.spark-streaming.stopGracefullyOnShutdown' to true
     # We are using groupBy transformation that will internally cause a shuffle operation.
     # That default shuffle partition configuration is 200 so our app will run slow
     # So you should set the spark shuffle partition value to 3
     spark = SparkSession.builder.appName("Streaming word count") \
         .master("local[3]") \
-        .config("spark.streaming.stopGracefullyOnShutdown", "true") \
+        .config("spark.spark-streaming.stopGracefullyOnShutdown", "true") \
         .config("spark.sql.shuffle.partitions", 3) \
         .getOrCreate()
 
